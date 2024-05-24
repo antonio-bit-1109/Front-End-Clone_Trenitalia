@@ -19,7 +19,7 @@ const NavBarCompDOWNDOWN = () => {
             return "size-base";
         }
         if (widthWindow >= 1000) {
-            return "size-large";
+            return "size-small";
         }
 
         return "size-base";
