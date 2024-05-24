@@ -17,7 +17,7 @@ const NavBarComp = () => {
 
         window.addEventListener("resize", handleResize);
 
-        // Pulizia alla dismontaggio
+        // Pulizia allo smontaggio
         return () => {
             window.removeEventListener("resize", handleResize);
         };
