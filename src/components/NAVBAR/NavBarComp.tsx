@@ -21,11 +21,7 @@ const NavBarComp = () => {
         return () => {
             window.removeEventListener("resize", handleResize);
         };
-    }, []);
-
-    // useEffect(() => {
-    //     console.log(widthWindow);
-    // }, [widthWindow]);
+    }, [dispatch]);
 
     return (
         <div className="sticky-top">
