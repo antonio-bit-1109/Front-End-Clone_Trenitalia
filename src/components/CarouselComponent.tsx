@@ -1,5 +1,5 @@
 const CarouselComponent = () => {
-    return <div className=" min-vh-100">CarouselComponent</div>;
+    return <div>CarouselComponent</div>;
 };
 
 export default CarouselComponent;

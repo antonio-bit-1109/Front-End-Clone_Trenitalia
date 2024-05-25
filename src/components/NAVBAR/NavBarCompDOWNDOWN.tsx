@@ -18,7 +18,12 @@ const NavBarCompDOWNDOWN = () => {
         if (widthWindow >= 800 && widthWindow < 1000) {
             return "size-base";
         }
-        if (widthWindow >= 1000) {
+
+        if (widthWindow >= 1000 && widthWindow < 1390) {
+            return "size-large";
+        }
+
+        if (widthWindow > 1390) {
             return "size-small";
         }
 
