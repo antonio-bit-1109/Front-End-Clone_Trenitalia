@@ -38,7 +38,11 @@ const CarouselComponent = () => {
                     >
                         {images.map((img, i) => (
                             <SwiperSlide key={`ciao-${i}`}>
-                                <img className="imgStyle" src={img} alt="esercizio" />
+                                <div className="position-relative">
+                                    {" "}
+                                    <img className="imgStyle" src={img} alt="esercizio" />
+                                    <div>{/* div con il form  */}</div>
+                                </div>
                             </SwiperSlide>
                         ))}
                     </Swiper>
