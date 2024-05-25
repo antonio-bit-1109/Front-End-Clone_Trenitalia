@@ -1,52 +1,50 @@
 import "swiper/swiper-bundle.css";
 import { Swiper, SwiperSlide } from "swiper/react";
-import cover1 from "/imgs/cover1.webp";
-import cover2 from "/imgs/cover2.webp";
-import cover3 from "/imgs/cover3.webp";
-import cover4 from "/imgs/cover4.webp";
+import { Navigation, Pagination, Scrollbar, Autoplay } from "swiper/modules";
 import { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
+import { useSelector } from "react-redux";
+import { rootState } from "../interfaces/Interfaces";
+
+const longImages = ["/imgs/cover1Long.webp", "/imgs/cover2Long.webp", "/imgs/cover3Long.webp", "/imgs/cover4Long.webp"];
+const shortImages = [
+    "/imgs/cover1Short.webp",
+    "/imgs/cover2Short.webp",
+    "/imgs/cover3Short.webp",
+    "/imgs/cover4Short.webp",
+];
 
 const CarouselComponent = () => {
-    const [arrayImgs, setArrayImgs] = useState<null | string[]>(null);
+    const { widthWindow } = useSelector((store: rootState) => store.main);
+
+    const [images, setImages] = useState<string[]>([]);
 
     useEffect(() => {
-        setArrayImgs([cover1, cover2, cover3, cover4]);
-    }, []);
+        setImages(widthWindow < 1100 ? shortImages : longImages);
+    }, [widthWindow]);
 
     return (
-        <>
-            <Container fluid>
-                <Row>
-                    <Col className="p-0">
-                        <div>
-                            <Swiper
-                                slidesPerView={1}
-                                navigation
-                                pagination={{ clickable: true }}
-                                scrollbar={{ draggable: true }}
-                                draggable="true"
-                                loop={true}
-                                autoplay={true}
-                            >
-                                {arrayImgs &&
-                                    arrayImgs.map((img, i) => (
-                                        <SwiperSlide key={`ciao-${i}`}>
-                                            <div>
-                                                <img
-                                                    style={{ width: "100%", height: "500px", objectFit: "cover" }}
-                                                    src={img}
-                                                    alt="esercizio"
-                                                />
-                                            </div>
-                                        </SwiperSlide>
-                                    ))}
-                            </Swiper>
-                        </div>
-                    </Col>
-                </Row>
-            </Container>
-        </>
+        <Container fluid>
+            <Row>
+                <Col className="p-0">
+                    <Swiper
+                        slidesPerView={1}
+                        navigation={true}
+                        pagination={{ clickable: true }}
+                        scrollbar={{ draggable: true }}
+                        loop={true}
+                        autoplay={{ delay: 6000 }}
+                        modules={[Navigation, Pagination, Scrollbar, Autoplay]}
+                    >
+                        {images.map((img, i) => (
+                            <SwiperSlide key={`ciao-${i}`}>
+                                <img className="imgStyle" src={img} alt="esercizio" />
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
+                </Col>
+            </Row>
+        </Container>
     );
 };
 
