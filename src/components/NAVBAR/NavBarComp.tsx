@@ -27,8 +27,11 @@ const NavBarComp = () => {
         <div className="sticky-top">
             <Container fluid className="p-0">
                 <NavbarCompUP />
-                <NavBarCompDOWN />
-                <NavBarCompDOWNDOWN />
+                <div className="bg-white">
+                    {" "}
+                    <NavBarCompDOWN />
+                    <NavBarCompDOWNDOWN />
+                </div>
             </Container>
         </div>
     );
