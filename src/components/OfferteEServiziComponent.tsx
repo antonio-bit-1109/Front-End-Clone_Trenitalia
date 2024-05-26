@@ -1,5 +1,5 @@
 const OfferteEServiziComponent = () => {
-    return <div className=" min-vh-100">OfferteEServiziComponent</div>;
+    return <div>OfferteEServiziComponent</div>;
 };
 
 export default OfferteEServiziComponent;
