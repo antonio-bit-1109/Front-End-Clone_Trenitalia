@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { rootState } from "../interfaces/Interfaces";
 import { Button, Col, Container, Row } from "react-bootstrap";
 import Dropdown from "react-bootstrap/Dropdown";
-import { InfoCircle } from "react-bootstrap-icons";
+import { InfoCircle, ZoomIn } from "react-bootstrap-icons";
 
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
@@ -41,6 +41,10 @@ const InputTrovaViaggioSmall = () => {
                                 </div>
                                 <div className="d-flex align-items-end">
                                     {" "}
+                                    <div className="mb-1 me-1">
+                                        {" "}
+                                        <ZoomIn />
+                                    </div>
                                     <p>Ultime Ricerche</p>
                                 </div>
                             </div>
