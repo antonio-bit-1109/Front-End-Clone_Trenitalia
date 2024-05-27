@@ -74,7 +74,7 @@ const NavBarCompDOWN = () => {
                                     INFO
                                 </Button>
                             </div>
-                            <div className="d-flex align-items-center d-xxl-none">
+                            <div className="d-flex align-items-center d-xxl-none me-5">
                                 <div>
                                     {" "}
                                     <Button variant="white border border-1 border-black px-4 py-1">

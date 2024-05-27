@@ -61,3 +61,43 @@ p {
     bottom: 50px;
     left: 0;
 }
+
+.absolute1 {
+    position: absolute;
+    top: 2px;
+    left: 6px;
+    z-index: 100;
+    font-weight: bold;
+}
+
+.absolute2 {
+    position: absolute;
+    top: 7px;
+    left: 195px;
+    z-index: 100;
+    font-weight: bold;
+    font-size: 1.6em;
+}
+
+.absolute3 {
+    position: absolute;
+    top: 2px;
+    left: 225px;
+    z-index: 100;
+    font-weight: bold;
+    font-size: 1.6em;
+}
+
+.absolute4 {
+    position: absolute;
+    top: 6px;
+    left: 45px;
+    z-index: 100;
+    font-weight: bold;
+    font-size: 1.6em;
+    color: black;
+}
+
+.cut {
+    width: 80px !important;
+}
