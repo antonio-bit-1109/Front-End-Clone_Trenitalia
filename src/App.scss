@@ -97,7 +97,57 @@ p {
     font-size: 1.6em;
     color: black;
 }
+.absolute5 {
+    position: absolute;
+    top: 8px;
+    left: 25px;
+    z-index: 100;
+    font-weight: bold;
+    font-size: inherit;
+    color: black;
+}
+.absolute6 {
+    position: absolute;
+    top: 53px;
+    left: 25px;
+    z-index: 100;
+    font-weight: bold;
+    font-size: inherit;
+    color: black;
+}
+
+.absolute7 {
+    position: absolute;
+    top: 25px;
+    right: 30px;
+    z-index: 100;
+    font-weight: bold;
+    font-size: 2em;
+    color: black;
+    rotate: (90deg);
+}
 
 .cut {
     width: 80px !important;
+}
+
+.max-width {
+    max-width: 75%;
+    background-color: white;
+}
+
+.swiper-button-prev {
+    color: white !important;
+}
+
+.swiper-button-next {
+    color: white !important;
+}
+
+.swiper-pagination-bullet {
+    background-color: white !important;
+}
+
+.custom-width {
+    width: 33.333%;
 }

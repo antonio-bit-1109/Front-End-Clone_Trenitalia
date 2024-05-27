@@ -1,5 +1,6 @@
 // import { useSelector } from "react-redux";
 import CarouselComponent from "./CarouselComponent";
+import InputTrovaViaggioSmall from "./InputTrovaViaggioSmall";
 import OfferteEServiziComponent from "./OfferteEServiziComponent";
 // import { rootState } from "../interfaces/Interfaces";
 
@@ -9,6 +10,7 @@ const MainPage = () => {
     return (
         <>
             <CarouselComponent />
+            <InputTrovaViaggioSmall />
             <OfferteEServiziComponent />
         </>
     );

@@ -37,7 +37,7 @@ const CarouselComponent = () => {
                         pagination={{ clickable: true }}
                         scrollbar={{ draggable: true }}
                         loop={true}
-                        // autoplay={{ delay: 6000 }}
+                        autoplay={{ delay: 6000 }}
                         modules={[Navigation, Pagination, Scrollbar, Autoplay]}
                     >
                         {images.map((img, i) => (
