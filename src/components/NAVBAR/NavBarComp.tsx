@@ -1,5 +1,4 @@
 import { Container } from "react-bootstrap";
-
 import NavbarCompUP from "./NavbarCompUP";
 import NavBarCompDOWN from "./NavBarCompDOWN";
 import NavBarCompDOWNDOWN from "./NavBarCompDOWNDOWN";
