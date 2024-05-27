@@ -232,18 +232,22 @@ $border-sizes: (
     color: rgb(216, 205, 205);
 }
 
-.primo-testo {
+.positioning {
     position: absolute;
-    top: 63%;
-    left: 5%;
-    width: 93%;
-    height: 32%;
-    max-width: 325px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    bottom: 0;
+    color: white;
     font-size: 20px;
+    font-family: MontserratBold;
     color: #fff;
     padding: 5px;
-    text-transform: uppercase;
+    width: 350px;
+    padding: 30px;
+}
+
+.swiper-scrollbar-drag {
+    visibility: hidden;
+}
+
+.swiper-scrollbar {
+    visibility: hidden;
 }
