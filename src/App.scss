@@ -1,3 +1,7 @@
+p {
+    margin: 0 !important;
+}
+
 .imgSize {
     object-fit: cover;
     width: 20px;
@@ -49,4 +53,11 @@
 .imgStyle {
     width: 100%;
     height: 450px;
+}
+
+.absolute {
+    color: white;
+    position: absolute;
+    bottom: 50px;
+    left: 0;
 }
