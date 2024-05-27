@@ -5,6 +5,7 @@ import { MainState_Interface } from "../../interfaces/Interfaces";
 
 const initialState: MainState_Interface = {
     widthWindow: window.innerWidth,
+    imagesObjs: null,
 };
 
 const stateReducerSlice = createSlice({
@@ -14,9 +15,13 @@ const stateReducerSlice = createSlice({
         setWidthWindow: (state, action) => {
             state.widthWindow = action.payload;
         },
+
+        setImagesNews: (state, action) => {
+            state.imagesObjs = action.payload;
+        },
     },
 });
 
 // Esporto solo l'azione definita nello slice
-export const { setWidthWindow } = stateReducerSlice.actions;
+export const { setWidthWindow, setImagesNews } = stateReducerSlice.actions;
 export default stateReducerSlice.reducer;

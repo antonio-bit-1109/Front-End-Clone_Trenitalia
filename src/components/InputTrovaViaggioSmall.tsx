@@ -128,14 +128,14 @@ const InputTrovaViaggioSmall = () => {
                         <Col>
                             <div className="w-100 mt-3">
                                 {" "}
-                                <Button variant="transparent border border-1 border-black custom-width">
-                                    Ricerca Avanzata
+                                <Button variant="transparent border border-1 border-black custom-width size-custom">
+                                    <div className="size-custom">Ricerca Avanzata</div>
                                 </Button>
                                 <Button variant="transparent border border-1 border-black custom-width">
-                                    Acquisto Rapido
+                                    <div className="size-custom">Acquisto Rapido</div>
                                 </Button>
                                 <Button variant="transparent border border-1 border-black custom-width">
-                                    Completa il tuo viaggio
+                                    <div className="size-custom">Completa il tuo Viaggio</div>
                                 </Button>
                             </div>
                         </Col>

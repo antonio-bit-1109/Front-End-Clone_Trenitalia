@@ -119,7 +119,7 @@ p {
 .absolute7 {
     position: absolute;
     top: 25px;
-    right: 30px;
+    right: 15px;
     z-index: 100;
     font-weight: bold;
     font-size: 2em;
@@ -150,4 +150,9 @@ p {
 
 .custom-width {
     width: 33.333%;
+}
+
+.size-custom {
+    font-size: 0.9rem;
+    padding-block: 0.5em;
 }

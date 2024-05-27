@@ -231,3 +231,19 @@ $border-sizes: (
 .colorAlmostWhite {
     color: rgb(216, 205, 205);
 }
+
+.primo-testo {
+    position: absolute;
+    top: 63%;
+    left: 5%;
+    width: 93%;
+    height: 32%;
+    max-width: 325px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    color: #fff;
+    padding: 5px;
+    text-transform: uppercase;
+}
