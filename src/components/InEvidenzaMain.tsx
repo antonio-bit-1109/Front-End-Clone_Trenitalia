@@ -30,10 +30,12 @@ const InEvidenzaMain = () => {
 
     return (
         <>
-            <Container fluid className="p-0">
+            <Container className="p-0">
                 <Row>
-                    <Col>
-                        <div className="my-3 fs-5 fw-bold d-flex justify-content-center">IN EVIDENZA</div>
+                    <Col className="offset-1">
+                        <div className="my-3 fs-5 fw-bold">
+                            <p>IN EVIDENZA</p>
+                        </div>
                     </Col>
                 </Row>
             </Container>

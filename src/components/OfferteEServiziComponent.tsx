@@ -40,10 +40,10 @@ const OfferteEServiziComponent = () => {
 
     return (
         <>
-            <Container fluid className="p-0">
+            <Container className="p-0">
                 <Row>
-                    <Col>
-                        <div className="my-3 fs-5 fw-bold d-flex justify-content-center">OFFERTE E SERVIZI</div>
+                    <Col className="offset-1">
+                        <div className="my-3 fs-5 fw-bold">OFFERTE E SERVIZI</div>
                     </Col>
                 </Row>
             </Container>

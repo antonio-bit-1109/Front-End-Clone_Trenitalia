@@ -45,12 +45,10 @@ const ServiziADisposizioneComponent = () => {
 
     return (
         <div className="mb-end-mdd-1 bg-grey">
-            <Container fluid className="p-0">
+            <Container className="p-0">
                 <Row>
-                    <Col>
-                        <div className="my-4 fs-5 fw-bold d-flex justify-content-center ">
-                            I SERVIZI A TUA DISPOSIZIONE
-                        </div>
+                    <Col className="offset-1">
+                        <div className="my-4 fs-5 fw-bold  ">I SERVIZI A TUA DISPOSIZIONE</div>
                     </Col>
                 </Row>
             </Container>
