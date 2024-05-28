@@ -26,7 +26,7 @@ const NavBarComp = () => {
         <div className="sticky-top">
             <Container fluid className="p-0">
                 <NavbarCompUP />
-                <div className="bg-white">
+                <div className="bg-white d-flex flex-column align-items-center">
                     {" "}
                     <NavBarCompDOWN />
                     <NavBarCompDOWNDOWN />

@@ -10,8 +10,8 @@ const NavbarCompUP = () => {
             {" "}
             <Row>
                 <div className="bg-grey w-100">
-                    <Col xxl="8" className="offset-xxl-3">
-                        <section className="d-flex align-items-center flex-wrap">
+                    <Col>
+                        <section className="d-flex justify-content-center align-items-center flex-wrap">
                             <Button variant="transparent" className="size-tiny fw-bold">
                                 <p className="m-0">Siti del gruppo</p>
                             </Button>

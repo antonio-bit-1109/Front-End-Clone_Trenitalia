@@ -37,8 +37,8 @@ const NavBarCompDOWNDOWN = () => {
     return (
         <>
             <Row>
-                <Col xxl="8" className="offset-xxl-3">
-                    <div className="px-3 d-flex gap-2 my-2 px-xxl-0">
+                <Col xs="12">
+                    <div className="d-flex  px-3 gap-2 my-2 px-xxl-0">
                         {" "}
                         <p className={`${handleFontSize()} class1`}> INFOTRAFFICO</p>
                         <p className={`${handleFontSize()}`}> CIRCOLAZIONE REGOLARE </p>

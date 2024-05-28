@@ -251,3 +251,11 @@ $border-sizes: (
 .swiper-scrollbar {
     visibility: hidden;
 }
+
+.shadow {
+    box-shadow: 6px 6px 15px black;
+}
+
+.container-linear-gradient {
+    background: transparent linear-gradient(180deg, #b2b2b2 0, #444 100%) 0 0 no-repeat padding-box;
+}
