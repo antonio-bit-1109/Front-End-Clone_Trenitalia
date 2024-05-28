@@ -2,6 +2,7 @@
 import CarouselComponent from "./CarouselComponent";
 import InputTrovaViaggioSmall from "./InputTrovaViaggioSmall";
 import OfferteEServiziComponent from "./OfferteEServiziComponent";
+import ServiziADisposizioneComponent from "./ServiziADisposizioneComponent";
 // import { rootState } from "../interfaces/Interfaces";
 
 const MainPage = () => {
@@ -12,6 +13,7 @@ const MainPage = () => {
             <CarouselComponent />
             <InputTrovaViaggioSmall />
             <OfferteEServiziComponent />
+            <ServiziADisposizioneComponent />
         </>
     );
 };

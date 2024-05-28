@@ -49,40 +49,8 @@ const OfferteEServiziComponent = () => {
                     </Col>
                 </Row>
             </Container>
-
-            <Container>
-                <Row>
-                    <Col>
-                        <Swiper
-                            slidesPerView={cardPerWiew}
-                            navigation={true}
-                            pagination={{ clickable: true }}
-                            scrollbar={{ draggable: true }}
-                            loop={true}
-                            autoplay={{ delay: 6000 }}
-                            modules={[Navigation, Pagination, Scrollbar, Autoplay]}
-                        >
-                            {imagesObjs &&
-                                imagesObjs.slice(0, 3).map((obj, i) => (
-                                    <SwiperSlide key={`my-image-key-${i}`}>
-                                        <div className="d-flex justify-content-center mt-2 ">
-                                            {" "}
-                                            <img
-                                                className="rounded-4 mx-2 position-relative"
-                                                src={`${LocalHostPath}/imgs/${obj.image}`}
-                                                alt="immagine"
-                                            />
-                                            <div className="positioning text-center">
-                                                <p className="fw-bolder">{obj.title.toUpperCase()}</p>
-                                            </div>
-                                        </div>
-                                    </SwiperSlide>
-                                ))}
-                        </Swiper>
-                    </Col>
-                </Row>
-
-                <div className="mt-2">
+            <div className="mb-end-xll-2">
+                <Container>
                     <Row>
                         <Col>
                             <Swiper
@@ -91,11 +59,11 @@ const OfferteEServiziComponent = () => {
                                 pagination={{ clickable: true }}
                                 scrollbar={{ draggable: true }}
                                 loop={true}
-                                // autoplay={{ delay: 6000 }}
+                                autoplay={{ delay: 6000 }}
                                 modules={[Navigation, Pagination, Scrollbar, Autoplay]}
                             >
                                 {imagesObjs &&
-                                    imagesObjs.slice(3, 6).map((obj, i) => (
+                                    imagesObjs.slice(0, 3).map((obj, i) => (
                                         <SwiperSlide key={`my-image-key-${i}`}>
                                             <div className="d-flex justify-content-center mt-2 ">
                                                 {" "}
@@ -113,41 +81,74 @@ const OfferteEServiziComponent = () => {
                             </Swiper>
                         </Col>
                     </Row>
-                </div>
-                <div className="mt-2">
-                    <Row>
-                        <Col>
-                            <Swiper
-                                slidesPerView={cardPerWiew}
-                                slidesPerGroup={1}
-                                navigation={true}
-                                pagination={{ clickable: true }}
-                                scrollbar={{ draggable: true }}
-                                loop={true}
-                                // autoplay={{ delay: 6000 }}
-                                modules={[Navigation, Pagination, Scrollbar, Autoplay]}
-                            >
-                                {imagesObjs &&
-                                    imagesObjs.slice(6, 9).map((obj, i) => (
-                                        <SwiperSlide key={`my-image-key-${i}`}>
-                                            <div className="d-flex justify-content-center mt-2 ">
-                                                {" "}
-                                                <img
-                                                    className="rounded-4 mx-2 position-relative"
-                                                    src={`${LocalHostPath}/imgs/${obj.image}`}
-                                                    alt="immagine"
-                                                />
-                                                <div className="positioning text-center">
-                                                    <p className="fw-bolder">{obj.title.toUpperCase()}</p>
+
+                    <div className="mt-2">
+                        <Row>
+                            <Col>
+                                <Swiper
+                                    slidesPerView={cardPerWiew}
+                                    navigation={true}
+                                    pagination={{ clickable: true }}
+                                    scrollbar={{ draggable: true }}
+                                    loop={true}
+                                    // autoplay={{ delay: 6000 }}
+                                    modules={[Navigation, Pagination, Scrollbar, Autoplay]}
+                                >
+                                    {imagesObjs &&
+                                        imagesObjs.slice(3, 6).map((obj, i) => (
+                                            <SwiperSlide key={`my-image-key-${i}`}>
+                                                <div className="d-flex justify-content-center mt-2 ">
+                                                    {" "}
+                                                    <img
+                                                        className="rounded-4 mx-2 position-relative"
+                                                        src={`${LocalHostPath}/imgs/${obj.image}`}
+                                                        alt="immagine"
+                                                    />
+                                                    <div className="positioning text-center">
+                                                        <p className="fw-bolder">{obj.title.toUpperCase()}</p>
+                                                    </div>
                                                 </div>
-                                            </div>
-                                        </SwiperSlide>
-                                    ))}
-                            </Swiper>
-                        </Col>
-                    </Row>
-                </div>
-            </Container>
+                                            </SwiperSlide>
+                                        ))}
+                                </Swiper>
+                            </Col>
+                        </Row>
+                    </div>
+                    <div className="mt-2">
+                        <Row>
+                            <Col>
+                                <Swiper
+                                    slidesPerView={cardPerWiew}
+                                    slidesPerGroup={1}
+                                    navigation={true}
+                                    pagination={{ clickable: true }}
+                                    scrollbar={{ draggable: true }}
+                                    loop={true}
+                                    // autoplay={{ delay: 6000 }}
+                                    modules={[Navigation, Pagination, Scrollbar, Autoplay]}
+                                >
+                                    {imagesObjs &&
+                                        imagesObjs.slice(6, 9).map((obj, i) => (
+                                            <SwiperSlide key={`my-image-key-${i}`}>
+                                                <div className="d-flex justify-content-center mt-2 ">
+                                                    {" "}
+                                                    <img
+                                                        className="rounded-4 mx-2 position-relative"
+                                                        src={`${LocalHostPath}/imgs/${obj.image}`}
+                                                        alt="immagine"
+                                                    />
+                                                    <div className="positioning text-center">
+                                                        <p className="fw-bolder">{obj.title.toUpperCase()}</p>
+                                                    </div>
+                                                </div>
+                                            </SwiperSlide>
+                                        ))}
+                                </Swiper>
+                            </Col>
+                        </Row>
+                    </div>
+                </Container>
+            </div>
         </>
     );
 };
