@@ -8,11 +8,11 @@ import yt from "/svgs/youtube.svg";
 
 const FooterComponent = () => {
     return (
-        <div className="container-linear-gradient">
+        <div className="container-linear-gradient pb-mdd-1">
             <Container>
                 <Row>
                     <Col className="offset-1">
-                        <div className="pb-start-mdd-1">
+                        <div>
                             <img src={logoBiancoTreni} alt="" />{" "}
                         </div>
                     </Col>

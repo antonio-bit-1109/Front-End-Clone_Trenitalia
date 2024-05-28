@@ -5,18 +5,29 @@ import UkFlag from "/svgs/flag_UK.svg";
 import spainFlag from "/svgs/spainFlag.png";
 import { useEffect, useState } from "react";
 
+// const arrayFlags = [[ItalyFlag, UkFlag, spainFlag]];
+const flagsMatrix = [
+    [ItalyFlag, "ITA"],
+    [UkFlag, "ENG"],
+    [spainFlag, "SPA"],
+];
+
 const NavbarCompUP = () => {
-    const [currentLanguageFlag, setCurrentLanguageFlag] = useState<undefined | string>("");
+    // const [currentFlag, setCurrentFlag] = useState<string | undefined>("");
 
-    useEffect(() => {
-        setCurrentLanguageFlag(ItalyFlag);
-    }, []);
+    // useEffect(() => {
+    //     setCurrentFlag(arrayFlags[0]);
+    // }, []);
 
-    const changeLanguage = () => {};
+    // const handleCurrentFlag = (n: number, array: string[]) => {
+
+    //     for (let i = 0 ; i < array.length ; i++) {
+
+    //     }
+    // };
 
     return (
         <div className="d-none d-xxl-block">
-            {" "}
             <Row>
                 <div className="bg-grey w-100">
                     <Col>
@@ -49,17 +60,27 @@ const NavbarCompUP = () => {
                                 <Button variant="transparent" className="size-tiny fw-bold p-0">
                                     <Search size={25} className="me-2" />
                                 </Button>{" "}
-                                <img src={currentLanguageFlag} alt="bandiera italiana" />
+                                {/* <img src={currentFlag} alt="bandiera italiana" /> */}
                                 <Dropdown drop="down-centered">
                                     <Dropdown.Toggle variant="transparent" id="dropdown-basic"></Dropdown.Toggle>
                                     <Dropdown.Menu>
-                                        <Dropdown.Item onClick={changeLanguage} className="d-flex align-items-center">
-                                            ENG
-                                            <img className="ms-2" src={UkFlag} alt="bandiera UK" />
+                                        <Dropdown.Item
+                                            // onClick={() => {
+                                            //     handleCurrentFlag(1, arrayFlags);
+                                            // }}
+                                            className="d-flex align-items-center"
+                                        >
+                                            {/* ENG */}
+                                            {/* <img className="ms-2" src={UkFlag} alt="bandiera UK" /> */}
                                         </Dropdown.Item>
-                                        <Dropdown.Item className="d-flex align-items-center">
-                                            SPAN
-                                            <img className="ms-2 imgSize" src={spainFlag} alt="bandiera spagnola" />
+                                        <Dropdown.Item
+                                            // onClick={() => {
+                                            //     handleCurrentFlag(2, arrayFlags);
+                                            // }}
+                                            className="d-flex align-items-center"
+                                        >
+                                            {/* SPAN */}
+                                            {/* <img className="ms-2 imgSize" src={spainFlag} alt="bandiera spagnola" /> */}
                                         </Dropdown.Item>
                                     </Dropdown.Menu>
                                 </Dropdown>
