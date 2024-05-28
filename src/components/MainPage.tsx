@@ -1,6 +1,7 @@
 // import { useSelector } from "react-redux";
 import CarouselComponent from "./CarouselComponent";
-import FooterComponent from "./FooterComponent";
+import FooterComponent from "./FOOTER/FooterComponent";
+import FooterEnd from "./FOOTER/FooterEnd";
 import InEvidenzaMain from "./InEvidenzaMain";
 import InputTrovaViaggioSmall from "./InputTrovaViaggioSmall";
 import JumbotronMainCompo from "./JumbotronMainCompo";
@@ -22,6 +23,7 @@ const MainPage = () => {
             <JumbotronMainCompo />
             <LavoriProgrammatiComponent />
             <FooterComponent />
+            <FooterEnd />
         </>
     );
 };
