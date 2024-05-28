@@ -37,38 +37,40 @@ const InEvidenzaMain = () => {
                     </Col>
                 </Row>
             </Container>
-            <Container>
-                <Row>
-                    <Col>
-                        <Swiper
-                            slidesPerView={cardPerWiew}
-                            navigation={true}
-                            pagination={{ clickable: true }}
-                            scrollbar={{ draggable: true }}
-                            loop={true}
-                            autoplay={{ delay: 6000 }}
-                            modules={[Navigation, Pagination, Scrollbar, Autoplay]}
-                        >
-                            {imagesObjs &&
-                                imagesObjs.slice(0, 3).map((obj, i) => (
-                                    <SwiperSlide key={`my-image-key-${i}`}>
-                                        <div className="d-flex justify-content-center mt-2 ">
-                                            {" "}
-                                            <img
-                                                className="rounded-4 mx-2 position-relative"
-                                                src={`${LocalHostPath}/imgs/${obj.image}`}
-                                                alt="immagine"
-                                            />
-                                            <div className="positioning text-center">
-                                                <p className="fw-bolder">{obj.title.toUpperCase()}</p>
+            <div className="mb-end-mdd-2">
+                <Container>
+                    <Row>
+                        <Col>
+                            <Swiper
+                                slidesPerView={cardPerWiew}
+                                navigation={true}
+                                pagination={{ clickable: true }}
+                                scrollbar={{ draggable: true }}
+                                loop={true}
+                                autoplay={{ delay: 6000 }}
+                                modules={[Navigation, Pagination, Scrollbar, Autoplay]}
+                            >
+                                {imagesObjs &&
+                                    imagesObjs.slice(9, 12).map((obj, i) => (
+                                        <SwiperSlide key={`my-image-key-${i}`}>
+                                            <div className="d-flex justify-content-center mt-2 ">
+                                                {" "}
+                                                <img
+                                                    className="rounded-4 mx-2 position-relative img-size"
+                                                    src={`${LocalHostPath}/imgs/${obj.image}`}
+                                                    alt="immagine"
+                                                />
+                                                <div className="positioning text-center">
+                                                    <p className="fw-bolder">{obj.title.toUpperCase()}</p>
+                                                </div>
                                             </div>
-                                        </div>
-                                    </SwiperSlide>
-                                ))}
-                        </Swiper>
-                    </Col>
-                </Row>
-            </Container>
+                                        </SwiperSlide>
+                                    ))}
+                            </Swiper>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
         </>
     );
 };

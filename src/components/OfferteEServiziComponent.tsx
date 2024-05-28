@@ -66,7 +66,7 @@ const OfferteEServiziComponent = () => {
                                             <div className="d-flex justify-content-center mt-2 ">
                                                 {" "}
                                                 <img
-                                                    className="rounded-4 mx-2 position-relative"
+                                                    className="rounded-4 mx-2 position-relative img-size"
                                                     src={`${LocalHostPath}/imgs/${obj.image}`}
                                                     alt="immagine"
                                                 />
@@ -98,7 +98,7 @@ const OfferteEServiziComponent = () => {
                                                 <div className="d-flex justify-content-center mt-2 ">
                                                     {" "}
                                                     <img
-                                                        className="rounded-4 mx-2 position-relative"
+                                                        className="rounded-4 mx-2 position-relative img-size"
                                                         src={`${LocalHostPath}/imgs/${obj.image}`}
                                                         alt="immagine"
                                                     />
@@ -131,7 +131,7 @@ const OfferteEServiziComponent = () => {
                                                 <div className="d-flex justify-content-center mt-2 ">
                                                     {" "}
                                                     <img
-                                                        className="rounded-4 mx-2 position-relative"
+                                                        className="rounded-4 mx-2 position-relative img-size"
                                                         src={`${LocalHostPath}/imgs/${obj.image}`}
                                                         alt="immagine"
                                                     />

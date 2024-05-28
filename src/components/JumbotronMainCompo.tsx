@@ -1,5 +1,5 @@
 const JumbotronMainCompo = () => {
-    return <div>JumbotronMainCompo</div>;
+    return <></>;
 };
 
 export default JumbotronMainCompo;

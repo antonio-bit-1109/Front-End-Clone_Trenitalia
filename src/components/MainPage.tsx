@@ -2,6 +2,7 @@
 import CarouselComponent from "./CarouselComponent";
 import InEvidenzaMain from "./InEvidenzaMain";
 import InputTrovaViaggioSmall from "./InputTrovaViaggioSmall";
+import JumbotronMainCompo from "./JumbotronMainCompo";
 import OfferteEServiziComponent from "./OfferteEServiziComponent";
 import ServiziADisposizioneComponent from "./ServiziADisposizioneComponent";
 // import { rootState } from "../interfaces/Interfaces";
@@ -16,6 +17,7 @@ const MainPage = () => {
             <OfferteEServiziComponent />
             <ServiziADisposizioneComponent />
             <InEvidenzaMain />
+            <JumbotronMainCompo />
         </>
     );
 };
