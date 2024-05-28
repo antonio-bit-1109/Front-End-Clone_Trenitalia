@@ -6,7 +6,7 @@ const FooterEnd = () => {
             <Container>
                 <Row>
                     <Col className="offset-1">
-                        <div className="d-flex justify-content-around py-1" id="last-piece">
+                        <div className="d-flex justify-content-around py-2" id="last-piece">
                             <p>Gruppo Italiano 2023</p>
                             <p>Contatti</p>
                             <p> Note Legali</p>

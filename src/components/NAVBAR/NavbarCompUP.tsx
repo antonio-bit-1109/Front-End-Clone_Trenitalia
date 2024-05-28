@@ -3,8 +3,17 @@ import { Search } from "react-bootstrap-icons";
 import ItalyFlag from "/svgs/ItalyFlag.svg";
 import UkFlag from "/svgs/flag_UK.svg";
 import spainFlag from "/svgs/spainFlag.png";
+import { useEffect, useState } from "react";
 
 const NavbarCompUP = () => {
+    const [currentLanguageFlag, setCurrentLanguageFlag] = useState<undefined | string>("");
+
+    useEffect(() => {
+        setCurrentLanguageFlag(ItalyFlag);
+    }, []);
+
+    const changeLanguage = () => {};
+
     return (
         <div className="d-none d-xxl-block">
             {" "}
@@ -40,17 +49,13 @@ const NavbarCompUP = () => {
                                 <Button variant="transparent" className="size-tiny fw-bold p-0">
                                     <Search size={25} className="me-2" />
                                 </Button>{" "}
-                                <img src={ItalyFlag} alt="bandiera italiana" />
+                                <img src={currentLanguageFlag} alt="bandiera italiana" />
                                 <Dropdown drop="down-centered">
                                     <Dropdown.Toggle variant="transparent" id="dropdown-basic"></Dropdown.Toggle>
                                     <Dropdown.Menu>
-                                        <Dropdown.Item className="d-flex align-items-center">
+                                        <Dropdown.Item onClick={changeLanguage} className="d-flex align-items-center">
                                             ENG
                                             <img className="ms-2" src={UkFlag} alt="bandiera UK" />
-                                        </Dropdown.Item>
-                                        <Dropdown.Item className="d-flex align-items-center">
-                                            ITA
-                                            <img className="ms-2" src={ItalyFlag} alt="bandiera italiana" />
                                         </Dropdown.Item>
                                         <Dropdown.Item className="d-flex align-items-center">
                                             SPAN
