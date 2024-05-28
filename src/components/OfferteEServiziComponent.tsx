@@ -42,10 +42,8 @@ const OfferteEServiziComponent = () => {
         <>
             <Container fluid className="p-0">
                 <Row>
-                    <Col xxl="8" className="offset-xxl-3">
-                        <div className="my-3 fs-5 fw-bold d-flex justify-content-center d-xxl-block">
-                            OFFERTE E SERVIZI
-                        </div>
+                    <Col>
+                        <div className="my-3 fs-5 fw-bold d-flex justify-content-center">OFFERTE E SERVIZI</div>
                     </Col>
                 </Row>
             </Container>

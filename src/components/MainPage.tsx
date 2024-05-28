@@ -1,5 +1,6 @@
 // import { useSelector } from "react-redux";
 import CarouselComponent from "./CarouselComponent";
+import InEvidenzaMain from "./InEvidenzaMain";
 import InputTrovaViaggioSmall from "./InputTrovaViaggioSmall";
 import OfferteEServiziComponent from "./OfferteEServiziComponent";
 import ServiziADisposizioneComponent from "./ServiziADisposizioneComponent";
@@ -14,6 +15,7 @@ const MainPage = () => {
             <InputTrovaViaggioSmall />
             <OfferteEServiziComponent />
             <ServiziADisposizioneComponent />
+            <InEvidenzaMain />
         </>
     );
 };

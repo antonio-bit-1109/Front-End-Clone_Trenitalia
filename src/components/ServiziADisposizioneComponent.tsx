@@ -44,11 +44,11 @@ const ServiziADisposizioneComponent = () => {
     };
 
     return (
-        <div className="mb-end-xll-2 bg-grey">
+        <div className="mb-end-mdd-1 bg-grey">
             <Container fluid className="p-0">
                 <Row>
-                    <Col xxl="8" className="offset-xxl-3">
-                        <div className="my-4 fs-5 fw-bold d-flex justify-content-center d-xxl-block">
+                    <Col>
+                        <div className="my-4 fs-5 fw-bold d-flex justify-content-center ">
                             I SERVIZI A TUA DISPOSIZIONE
                         </div>
                     </Col>
