@@ -40,44 +40,48 @@ const OfferteEServiziComponent = () => {
 
     return (
         <>
+            <Container fluid className="p-0">
+                <Row>
+                    <Col xxl="8" className="offset-xxl-3">
+                        <div className="my-3 fs-5 fw-bold d-flex justify-content-center d-xxl-block">
+                            OFFERTE E SERVIZI
+                        </div>
+                    </Col>
+                </Row>
+            </Container>
+
             <Container>
                 <Row>
                     <Col>
-                        <div className="my-3 fs-4 fw-bold">OFFERTE E SERVIZI</div>
+                        <Swiper
+                            slidesPerView={cardPerWiew}
+                            navigation={true}
+                            pagination={{ clickable: true }}
+                            scrollbar={{ draggable: true }}
+                            loop={true}
+                            autoplay={{ delay: 6000 }}
+                            modules={[Navigation, Pagination, Scrollbar, Autoplay]}
+                        >
+                            {imagesObjs &&
+                                imagesObjs.slice(0, 3).map((obj, i) => (
+                                    <SwiperSlide key={`my-image-key-${i}`}>
+                                        <div className="d-flex justify-content-center mt-2 ">
+                                            {" "}
+                                            <img
+                                                className="rounded-4 mx-2 position-relative"
+                                                src={`${LocalHostPath}/imgs/${obj.image}`}
+                                                alt="immagine"
+                                            />
+                                            <div className="positioning text-center">
+                                                <p className="fw-bolder">{obj.title.toUpperCase()}</p>
+                                            </div>
+                                        </div>
+                                    </SwiperSlide>
+                                ))}
+                        </Swiper>
                     </Col>
                 </Row>
-                <div className="mt-2">
-                    <Row>
-                        <Col>
-                            <Swiper
-                                slidesPerView={cardPerWiew}
-                                navigation={true}
-                                pagination={{ clickable: true }}
-                                scrollbar={{ draggable: true }}
-                                loop={true}
-                                // autoplay={{ delay: 6000 }}
-                                modules={[Navigation, Pagination, Scrollbar, Autoplay]}
-                            >
-                                {imagesObjs &&
-                                    imagesObjs.slice(0, 3).map((obj, i) => (
-                                        <SwiperSlide key={`my-image-key-${i}`}>
-                                            <div className="d-flex justify-content-center mt-2 ">
-                                                {" "}
-                                                <img
-                                                    className="rounded-4 mx-2 position-relative"
-                                                    src={`${LocalHostPath}/imgs/${obj.image}`}
-                                                    alt="immagine"
-                                                />
-                                                <div className="positioning text-center">
-                                                    <p className="fw-bolder">{obj.title.toUpperCase()}</p>
-                                                </div>
-                                            </div>
-                                        </SwiperSlide>
-                                    ))}
-                            </Swiper>
-                        </Col>
-                    </Row>
-                </div>
+
                 <div className="mt-2">
                     <Row>
                         <Col>
