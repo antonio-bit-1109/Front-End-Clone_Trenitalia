@@ -6,6 +6,7 @@ import { rootState } from "../../interfaces/Interfaces";
 import { List } from "react-bootstrap-icons";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
+import CambioLinguaComponent from "./CambioLinguaComponent";
 
 const NavBarCompDOWN = () => {
     const { t } = useTranslation();
@@ -81,7 +82,7 @@ const NavBarCompDOWN = () => {
                                 {" "}
                                 <Button variant="white border border-1 border-black px-4 py-1">
                                     {" "}
-                                    Cerca Biglietto{" "}
+                                    {t("biglietto")}
                                 </Button>
                             </div>{" "}
                             <div>
@@ -104,6 +105,7 @@ const NavBarCompDOWN = () => {
                             </div>
                         </div>
                     </div>
+                    {widthWindow < 1400 ? <CambioLinguaComponent /> : null}
                 </Col>
             </Row>
         </>

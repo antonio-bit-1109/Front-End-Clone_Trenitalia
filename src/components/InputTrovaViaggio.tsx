@@ -22,24 +22,24 @@ const InputTrovaViaggio = () => {
                     <Col xs="12">
                         <div className="d-flex my-3 column-gap-5">
                             <div className="d-flex align-items-center gap-2">
-                                <InfoCircleFill /> <p>{t("carous1")}</p>
+                                <InfoCircleFill /> <p>{t("carousForm1")}</p>
                             </div>
                             <div className="d-flex align-items-center gap-2">
                                 {" "}
                                 <ZoomIn />
-                                <p>{t("carous2")}</p>
+                                <p>{t("carousForm2")}</p>
                             </div>
                             <div className="d-flex align-items-center gap-2">
                                 <Form>
                                     <Form.Check // prettier-ignore
                                         type="switch"
                                         id="custom-switch"
-                                        label={t("carous3")}
+                                        label={t("carousForm3")}
                                     />
                                 </Form>{" "}
                             </div>
                             <div className="d-flex align-items-center gap-2">
-                                <p>{t("carous4")}</p> <ArrowRight />
+                                <p>{t("carousForm4")}</p> <ArrowRight />
                             </div>
                         </div>
                     </Col>
@@ -51,11 +51,11 @@ const InputTrovaViaggio = () => {
                         <div className="d-flex gap-4">
                             <div>
                                 <InputGroup className="mb-3 position-relative">
-                                    <p className="text-danger fs-5 absolute1">{t("carous5")}</p>
+                                    <p className="text-danger fs-5 absolute1">{t("carousForm5")}</p>
                                     <Form.Control aria-label="First name" />
                                     <Form.Control aria-label="Last name" />
                                     <GoArrowSwitch className="absolute2 text-danger" />
-                                    <p className="text-danger fs-5 absolute3">{t("carous6")}</p>
+                                    <p className="text-danger fs-5 absolute3">{t("carousForm6")}</p>
                                 </InputGroup>
                             </div>
                             <div className="d-flex">
@@ -83,14 +83,14 @@ const InputTrovaViaggio = () => {
                         <div className="d-flex w-100 gap-3">
                             <div className="d-flex  align-items-center justify-content-center me-3">
                                 <Search />
-                                <p className="ms-2">{t("carous7")}</p>
+                                <p className="ms-2">{t("carousForm7")}</p>
                             </div>
                             <div className="d-flex gap-3 align-items-center me-5">
-                                <CarFrontFill /> <p>{t("carous8")}</p>
+                                <CarFrontFill /> <p>{t("carousForm8")}</p>
                             </div>
                             <div>
                                 <Button className="px-5" variant="danger">
-                                    {t("carous9")}
+                                    {t("carousForm9")}
                                 </Button>
                             </div>
                         </div>

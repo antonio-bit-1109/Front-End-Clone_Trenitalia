@@ -7,6 +7,7 @@ import { InfoCircle, ZoomIn } from "react-bootstrap-icons";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 import { GoArrowSwitch } from "react-icons/go";
+import { useTranslation } from "react-i18next";
 
 // import { Button, Col, InputGroup, Row } from "react-bootstrap";
 // import { ArrowRight, CarFrontFill, InfoCircleFill, Search, ZoomIn } from "react-bootstrap-icons";
@@ -16,6 +17,7 @@ import { GoArrowSwitch } from "react-icons/go";
 
 const InputTrovaViaggioSmall = () => {
     const { widthWindow } = useSelector((store: rootState) => store.main);
+    const { t } = useTranslation();
 
     return (
         <div className={`  ${widthWindow > 1100 && "d-none"}`}>
@@ -29,7 +31,7 @@ const InputTrovaViaggioSmall = () => {
                                     <Dropdown>
                                         <InfoCircle />
                                         <Dropdown.Toggle variant="transparent" id="dropdown-basic">
-                                            Principali Soluzioni
+                                            {t("carousFormSm1")}
                                         </Dropdown.Toggle>
 
                                         <Dropdown.Menu>
@@ -45,7 +47,7 @@ const InputTrovaViaggioSmall = () => {
                                         {" "}
                                         <ZoomIn />
                                     </div>
-                                    <p>Ultime Ricerche</p>
+                                    <p>{t("carousFormSm2")}</p>
                                 </div>
                             </div>
                         </Col>
@@ -56,10 +58,10 @@ const InputTrovaViaggioSmall = () => {
                             <div className="p-1 border border-2 rounded-3 mt-3 position-relative">
                                 {" "}
                                 <GoArrowSwitch className="absolute7 text-danger" />
-                                <p className="text-danger fs-5 absolute6">A</p>
+                                <p className="text-danger fs-5 absolute6">{t("carousFormSm4")}</p>
                                 <div>
                                     {" "}
-                                    <p className="text-danger fs-5 absolute5">Da</p>
+                                    <p className="text-danger fs-5 absolute5">{t("carousFormSm3")}</p>
                                 </div>
                                 <InputGroup className="d-flex justify-content-center">
                                     <Form.Control
@@ -86,7 +88,7 @@ const InputTrovaViaggioSmall = () => {
                                         // prettier-ignore
                                         type="switch"
                                         id="custom-switch"
-                                        label="Andata e Ritorno"
+                                        label={t("carousFormSm5")}
                                     />
                                 </Form>{" "}
                             </div>
@@ -119,7 +121,7 @@ const InputTrovaViaggioSmall = () => {
                         <Col>
                             <div className="d-flex ">
                                 <Button variant="danger" className="w-100">
-                                    CERCA
+                                    {t("carousFormSm6")}
                                 </Button>
                             </div>
                         </Col>
@@ -129,13 +131,13 @@ const InputTrovaViaggioSmall = () => {
                             <div className="w-100 mt-3">
                                 {" "}
                                 <Button variant="transparent border border-1 border-black custom-width size-custom">
-                                    <div className="size-custom">Ricerca Avanzata</div>
+                                    <div className="size-custom">{t("carousFormSm7")}</div>
                                 </Button>
                                 <Button variant="transparent border border-1 border-black custom-width">
-                                    <div className="size-custom">Acquisto Rapido</div>
+                                    <div className="size-custom">{t("carousFormSm8")}</div>
                                 </Button>
                                 <Button variant="transparent border border-1 border-black custom-width">
-                                    <div className="size-custom">Completa il tuo Viaggio</div>
+                                    <div className="size-custom">{t("carousFormSm9")}</div>
                                 </Button>
                             </div>
                         </Col>
