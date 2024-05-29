@@ -7,6 +7,9 @@ const initialState: MainState_Interface = {
     widthWindow: window.innerWidth,
     imagesObjs: null,
     caroselloData: null,
+    currentFlag: "",
+    currentLanguage: "",
+    InitialFlagMatrix: null,
 };
 
 const stateReducerSlice = createSlice({
@@ -24,9 +27,26 @@ const stateReducerSlice = createSlice({
         setCaroselloData: (state, action) => {
             state.caroselloData = action.payload;
         },
+
+        setCurrentFlag: (state, action) => {
+            state.currentFlag = action.payload;
+        },
+        setCurrentLanguage: (state, action) => {
+            state.currentLanguage = action.payload;
+        },
+        setInitialFlagMatrix: (state, action) => {
+            state.InitialFlagMatrix = action.payload;
+        },
     },
 });
 
 // Esporto solo l'azione definita nello slice
-export const { setWidthWindow, setImagesNews, setCaroselloData } = stateReducerSlice.actions;
+export const {
+    setWidthWindow,
+    setImagesNews,
+    setCaroselloData,
+    setCurrentFlag,
+    setCurrentLanguage,
+    setInitialFlagMatrix,
+} = stateReducerSlice.actions;
 export default stateReducerSlice.reducer;
