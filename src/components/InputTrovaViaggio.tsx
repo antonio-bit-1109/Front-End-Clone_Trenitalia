@@ -5,8 +5,10 @@ import { ArrowRight, CarFrontFill, InfoCircleFill, Search, ZoomIn } from "react-
 import { Form } from "react-bootstrap";
 import { GoArrowSwitch } from "react-icons/go";
 import { IoPerson } from "react-icons/io5";
+import { useTranslation } from "react-i18next";
 
 const InputTrovaViaggio = () => {
+    const { t } = useTranslation();
     const { widthWindow } = useSelector((store: rootState) => store.main);
 
     return (
@@ -20,24 +22,24 @@ const InputTrovaViaggio = () => {
                     <Col xs="12">
                         <div className="d-flex my-3 column-gap-5">
                             <div className="d-flex align-items-center gap-2">
-                                <InfoCircleFill /> <p>Principali soluzioni</p>
+                                <InfoCircleFill /> <p>{t("carous1")}</p>
                             </div>
                             <div className="d-flex align-items-center gap-2">
                                 {" "}
                                 <ZoomIn />
-                                <p>Ricerca Avanzata</p>
+                                <p>{t("carous2")}</p>
                             </div>
                             <div className="d-flex align-items-center gap-2">
                                 <Form>
                                     <Form.Check // prettier-ignore
                                         type="switch"
                                         id="custom-switch"
-                                        label="Andata e Ritorno"
+                                        label={t("carous3")}
                                     />
                                 </Form>{" "}
                             </div>
                             <div className="d-flex align-items-center gap-2">
-                                <p>Acquisto Rapido</p> <ArrowRight />
+                                <p>{t("carous4")}</p> <ArrowRight />
                             </div>
                         </div>
                     </Col>
@@ -49,11 +51,11 @@ const InputTrovaViaggio = () => {
                         <div className="d-flex gap-4">
                             <div>
                                 <InputGroup className="mb-3 position-relative">
-                                    <p className="text-danger fs-5 absolute1">Da</p>
+                                    <p className="text-danger fs-5 absolute1">{t("carous5")}</p>
                                     <Form.Control aria-label="First name" />
                                     <Form.Control aria-label="Last name" />
                                     <GoArrowSwitch className="absolute2 text-danger" />
-                                    <p className="text-danger fs-5 absolute3">a</p>
+                                    <p className="text-danger fs-5 absolute3">{t("carous6")}</p>
                                 </InputGroup>
                             </div>
                             <div className="d-flex">
@@ -81,14 +83,14 @@ const InputTrovaViaggio = () => {
                         <div className="d-flex w-100 gap-3">
                             <div className="d-flex  align-items-center justify-content-center me-3">
                                 <Search />
-                                <p className="ms-2">Ultime Ricerche</p>
+                                <p className="ms-2">{t("carous7")}</p>
                             </div>
                             <div className="d-flex gap-3 align-items-center me-5">
-                                <CarFrontFill /> <p>Completa il tuo viaggio</p>
+                                <CarFrontFill /> <p>{t("carous8")}</p>
                             </div>
                             <div>
                                 <Button className="px-5" variant="danger">
-                                    CERCA
+                                    {t("carous9")}
                                 </Button>
                             </div>
                         </div>

@@ -2,8 +2,10 @@ import { Col, Row } from "react-bootstrap";
 import { useSelector } from "react-redux";
 import { rootState } from "../../interfaces/Interfaces";
 import { useEffect } from "react";
+import { useTranslation } from "react-i18next";
 
 const NavBarCompDOWNDOWN = () => {
+    const { t } = useTranslation();
     const { widthWindow } = useSelector((store: rootState) => store.main);
 
     const handleFontSize = (): string => {
@@ -40,7 +42,7 @@ const NavBarCompDOWNDOWN = () => {
                 <Col xs="12">
                     <div className="d-flex  px-3 gap-2 my-2 px-xxl-0">
                         {" "}
-                        <p className={`${handleFontSize()} class1`}> INFOTRAFFICO</p>
+                        <p className={`${handleFontSize()} class1`}> {t("navDownDown1")}</p>
                         <p className={`${handleFontSize()}`}> CIRCOLAZIONE REGOLARE </p>
                     </div>
                 </Col>

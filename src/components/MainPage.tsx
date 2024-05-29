@@ -11,8 +11,6 @@ import ServiziADisposizioneComponent from "./ServiziADisposizioneComponent";
 // import { rootState } from "../interfaces/Interfaces";
 
 const MainPage = () => {
-    // const { widthWindow } = useSelector((store: rootState) => store.main);
-
     return (
         <>
             <CarouselComponent />

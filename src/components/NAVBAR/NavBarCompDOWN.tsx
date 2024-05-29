@@ -5,8 +5,11 @@ import { useSelector } from "react-redux";
 import { rootState } from "../../interfaces/Interfaces";
 import { List } from "react-bootstrap-icons";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 const NavBarCompDOWN = () => {
+    const { t } = useTranslation();
+
     const { widthWindow } = useSelector((store: rootState) => store.main);
 
     const [show, setShow] = useState(false);
@@ -49,28 +52,28 @@ const NavBarCompDOWN = () => {
                         />
                         <div className="d-none d-xxl-flex gap-3 size-small fw-bold flex-wrap">
                             <Button variant="transparent" className="p-0 hoverEffect size-tiny">
-                                CHI SIAMO
+                                {t("navDown1")}
                             </Button>
                             <Button variant="transparent" className="p-0 hoverEffect size-tiny">
-                                FRECCE
+                                {t("navDown2")}
                             </Button>
                             <Button variant="transparent" className="p-0 hoverEffect size-tiny">
-                                INTERCITY E INTERNAZIONALI
+                                {t("navDown3")}
                             </Button>
                             <Button variant="transparent" className="p-0 hoverEffect size-tiny">
-                                REGIONALE
+                                {t("navDown4")}
                             </Button>
                             <Button variant="transparent" className="p-0 hoverEffect size-tiny">
-                                OFFERTE
+                                {t("navDown5")}
                             </Button>
                             <Button variant="transparent" className="p-0 hoverEffect size-tiny">
-                                SERVIZI
+                                {t("navDown6")}
                             </Button>
                             <Button variant="transparent" className="p-0 hoverEffect size-tiny">
-                                CARTARECCIA E X-GO
+                                {t("navDown7")}
                             </Button>{" "}
                             <Button variant="transparent" className="p-0 hoverEffect size-tiny">
-                                INFO
+                                {t("navDown8")}
                             </Button>
                         </div>
                         <div className="d-flex align-items-center d-xxl-none">
