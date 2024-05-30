@@ -7,9 +7,9 @@ const initialState: MainState_Interface = {
     widthWindow: window.innerWidth,
     imagesObjs: null,
     caroselloData: null,
-    currentFlag: "",
-    currentLanguage: "",
-    InitialFlagMatrix: null,
+    currentFlag: undefined,
+    currentLanguage: undefined,
+    InitialFlagMatrix: undefined,
 };
 
 const stateReducerSlice = createSlice({

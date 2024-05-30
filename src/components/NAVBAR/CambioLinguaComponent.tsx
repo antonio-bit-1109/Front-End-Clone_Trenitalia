@@ -6,8 +6,8 @@ import { useEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { rootState } from "../../interfaces/Interfaces";
-import { setCurrentFlag, setCurrentLanguage, setInitialFlagMatrix } from "../../redux/reducers/firstReducer";
 import { AppDispatch } from "../../redux/store/store";
+import { setCurrentFlag, setCurrentLanguage, setInitialFlagMatrix } from "../../redux/reducers/firstReducer";
 
 const flagsMatrix = [
     [ItalyFlag, "it"],
@@ -15,12 +15,14 @@ const flagsMatrix = [
     [spainFlag, "esp"],
 ];
 
+const InitialState = [
+    [UkFlag, "en"],
+    [spainFlag, "esp"],
+];
+
 const CambioLinguaComponent = () => {
     const dispatch: AppDispatch = useDispatch();
     const { i18n } = useTranslation();
-    // const [InitialflagMatrix, setInitialFlagMatrix] = useState(flagsMatrix);
-    // const [currentFlag, setCurrentFlag] = useState(flagsMatrix[0][0]);
-    // const [currenteLanguage, setCurrentLanguage] = useState(flagsMatrix[0][1]);
 
     const { currentFlag, currentLanguage, InitialFlagMatrix } = useSelector((store: rootState) => store.main);
 
@@ -30,44 +32,65 @@ const CambioLinguaComponent = () => {
     nowFlag.current = currentFlag;
     nowLanguage.current = currentLanguage;
 
-    // useEffect(() => {
-    //     dispatch(setInitialFlagMatrix(flagsMatrix));
-    //     dispatch(setCurrentFlag(flagsMatrix[0][0]));
-    //     dispatch(setCurrentLanguage(flagsMatrix[0][1]));
-    // }, [dispatch]);
+    useEffect(() => {
+        if (!currentFlag && !currentLanguage && !InitialFlagMatrix) {
+            dispatch(setInitialFlagMatrix(InitialState));
+            dispatch(setCurrentFlag(flagsMatrix[0][0]));
+            dispatch(setCurrentLanguage(flagsMatrix[0][1]));
+        }
+    }, []);
 
     useEffect(() => {
-        dispatch(setInitialFlagMatrix(flagsMatrix));
-        dispatch(setCurrentFlag(flagsMatrix[0][0]));
-        dispatch(setCurrentLanguage(flagsMatrix[0][1]));
-
-        let newFlagsMatrix;
         if (InitialFlagMatrix) {
-            newFlagsMatrix = InitialFlagMatrix.filter(
+            const newFlagsMatrix = InitialFlagMatrix.filter(
                 (flag) => !(flag[0] === currentFlag && flag[1] === currentLanguage)
             );
+
+            setInitialFlagMatrix(newFlagsMatrix);
+
+            i18n.changeLanguage(currentLanguage);
         }
 
-        dispatch(setInitialFlagMatrix(newFlagsMatrix));
-
-        // setInitialFlagMatrix(newFlagsMatrix);
-
-        i18n.changeLanguage(currentLanguage);
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [currentFlag, currentLanguage]);
 
     const reassignedFlag = (clickedFlag: string[]) => {
         dispatch(setCurrentFlag(clickedFlag[0]));
         dispatch(setCurrentLanguage(clickedFlag[1]));
-        dispatch(
-            setInitialFlagMatrix((prev: string[][]) => {
-                if (nowFlag.current !== undefined && nowLanguage.current !== undefined) {
-                    return [...prev, [nowFlag.current, nowLanguage.current]];
-                } else {
-                    return prev;
-                }
-            })
-        );
+
+        let MatrixCopy: string[][] = flagsMatrix;
+
+        if (nowFlag.current !== undefined && nowLanguage.current !== undefined) {
+            MatrixCopy = [...MatrixCopy, [nowFlag.current, nowLanguage.current]];
+        }
+
+        console.log(MatrixCopy);
+
+        if (currentFlag === undefined) {
+            console.error("currentFlag è undefined");
+            return;
+        }
+
+        if (currentLanguage === undefined) {
+            console.error("currentLanguage è undefined");
+            return;
+        }
+
+        const filteredMatrix = controlloValoriDuplicati(MatrixCopy, currentFlag, currentLanguage);
+        dispatch(setInitialFlagMatrix(filteredMatrix));
+    };
+
+    // sistema elliminazione di uno dei valori duplicati
+    const controlloValoriDuplicati = (matrix: string[][], currentFlag: string, currentLanguage: string) => {
+        for (let i = 0; i < matrix.length; i++) {
+            const array = matrix[i];
+
+            if (array[0] === currentFlag && array[1] === currentLanguage) {
+                matrix.splice(i, 1);
+                break;
+            }
+        }
+        return matrix;
     };
 
     return (
