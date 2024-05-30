@@ -8,13 +8,14 @@ import { LocalHostPath } from "../functions/localHostPath";
 import "swiper/swiper-bundle.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, Autoplay } from "swiper/modules";
+import { useTranslation } from "react-i18next";
+// import { postFetchTRanslate } from "../fetches/POST/MIcrosoftTranslate";
+// import { setDataToTraduce } from "../redux/reducers/firstReducer";
 
 const OfferteEServiziComponent = () => {
     const dispatch: AppDispatch = useDispatch();
-
-    const { imagesObjs } = useSelector((store: rootState) => store.main);
-    const { widthWindow } = useSelector((store: rootState) => store.main);
-
+    const { t } = useTranslation();
+    const { imagesObjs, widthWindow } = useSelector((store: rootState) => store.main);
     const [cardPerWiew, setCardPerView] = useState<"auto" | number | undefined>(1);
 
     useEffect(() => {
@@ -24,6 +25,23 @@ const OfferteEServiziComponent = () => {
     useEffect(() => {
         changeSwiperCardVisibility(widthWindow);
     }, [widthWindow]);
+
+    // useEffect(() => {
+    //     if (imagesObjs) {
+    //         const tempArray: string[] = [];
+    //         for (let i = 0; i < imagesObjs.length; i++) {
+    //             const cardTitle = imagesObjs[i].title;
+    //             tempArray.push(cardTitle);
+    //         }
+    //         dispatch(setDataToTraduce(tempArray));
+    //     }
+    // }, [imagesObjs, dispatch]);
+
+    // useEffect(() => {
+    //     if (dataToTraduce) {
+    //         dispatch(postFetchTRanslate(dataToTraduce));
+    //     }
+    // }, [dataToTraduce, dispatch]);
 
     const changeSwiperCardVisibility = (widthWindow: number) => {
         if (widthWindow < 780) {
@@ -43,7 +61,7 @@ const OfferteEServiziComponent = () => {
             <Container className="p-0">
                 <Row>
                     <Col className="offset-1">
-                        <div className="my-3 fs-5 fw-bold">OFFERTE E SERVIZI</div>
+                        <div className="my-3 fs-5 fw-bold">{t("off_e_serv1")}</div>
                     </Col>
                 </Row>
             </Container>
@@ -71,7 +89,7 @@ const OfferteEServiziComponent = () => {
                                                     alt="immagine"
                                                 />
                                                 <div className="positioning text-center">
-                                                    <p className="fw-bolder">{obj.title.toUpperCase()}</p>
+                                                    <p className="fw-bolder"> {t(`off_servSlide${i}`).toUpperCase()}</p>
                                                 </div>
                                             </div>
                                         </SwiperSlide>
@@ -103,7 +121,10 @@ const OfferteEServiziComponent = () => {
                                                         alt="immagine"
                                                     />
                                                     <div className="positioning text-center">
-                                                        <p className="fw-bolder">{obj.title.toUpperCase()}</p>
+                                                        <p className="fw-bolder">
+                                                            {" "}
+                                                            {t(`off_servSlide${i + 3}`).toUpperCase()}
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </SwiperSlide>
@@ -136,7 +157,9 @@ const OfferteEServiziComponent = () => {
                                                         alt="immagine"
                                                     />
                                                     <div className="positioning text-center">
-                                                        <p className="fw-bolder">{obj.title.toUpperCase()}</p>
+                                                        <p className="fw-bolder">
+                                                            {t(`off_servSlide${i + 6}`).toUpperCase()}
+                                                        </p>
                                                     </div>
                                                 </div>
                                             </SwiperSlide>

@@ -10,6 +10,9 @@ const initialState: MainState_Interface = {
     currentFlag: undefined,
     currentLanguage: undefined,
     InitialFlagMatrix: undefined,
+    // dataToTraduce: null,
+    // dataTraducedInEs: null,
+    // dataTraducedInEn: null,
 };
 
 const stateReducerSlice = createSlice({
@@ -37,6 +40,16 @@ const stateReducerSlice = createSlice({
         setInitialFlagMatrix: (state, action) => {
             state.InitialFlagMatrix = action.payload;
         },
+        // setDataToTraduce: (state, action) => {
+        //     state.dataToTraduce = action.payload;
+        // },
+
+        // setDataTraducedInEs: (state, action) => {
+        //     state.dataTraducedInEs = action.payload;
+        // },
+        // setDataTraducedInEn: (state, action) => {
+        //     state.dataTraducedInEn = action.payload;
+        // },
     },
 });
 
@@ -48,5 +61,8 @@ export const {
     setCurrentFlag,
     setCurrentLanguage,
     setInitialFlagMatrix,
+    // setDataToTraduce,
+    // setDataTraducedInEs,
+    // setDataTraducedInEn,
 } = stateReducerSlice.actions;
 export default stateReducerSlice.reducer;

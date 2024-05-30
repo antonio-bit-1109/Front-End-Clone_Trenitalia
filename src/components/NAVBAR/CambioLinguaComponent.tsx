@@ -38,7 +38,8 @@ const CambioLinguaComponent = () => {
             dispatch(setCurrentFlag(flagsMatrix[0][0]));
             dispatch(setCurrentLanguage(flagsMatrix[0][1]));
         }
-    }, []);
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [dispatch]);
 
     useEffect(() => {
         if (InitialFlagMatrix) {
