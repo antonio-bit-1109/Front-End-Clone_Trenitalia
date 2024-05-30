@@ -2,7 +2,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import "swiper/swiper-bundle.css";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, Scrollbar, Autoplay } from "swiper/modules";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch } from "../redux/store/store";
 import { getCaroselloData } from "../fetches/GET/getFetches";
@@ -19,20 +19,16 @@ const ServiziADisposizioneComponent = () => {
 
     useEffect(() => {
         dispatch(getCaroselloData());
-    }, []);
+    }, [dispatch]);
 
-    useEffect(() => {
-        handleSlidesVisibleSwiper();
-    }, [widthWindow]);
-
-    const handleSlidesVisibleSwiper = () => {
-        if (widthWindow < 950) {
-            setSLidesVisible(3);
+    const handleSlidesVisibleSwiper = useCallback(() => {
+        if (widthWindow < 550) {
+            setSLidesVisible(2);
             return;
         }
 
-        if (widthWindow < 550) {
-            setSLidesVisible(2);
+        if (widthWindow < 950) {
+            setSLidesVisible(3);
             return;
         }
 
@@ -41,8 +37,11 @@ const ServiziADisposizioneComponent = () => {
             return;
         }
         setSLidesVisible(5);
-        return;
-    };
+    }, [widthWindow]);
+
+    useEffect(() => {
+        handleSlidesVisibleSwiper();
+    }, [handleSlidesVisibleSwiper]);
 
     return (
         <div className="mb-end-mdd-1 bg-grey">
@@ -77,7 +76,7 @@ const ServiziADisposizioneComponent = () => {
                                                     alt="immagine"
                                                 />
                                                 <div>
-                                                    <p className="fw-bolder">{obj.title.toUpperCase()}</p>
+                                                    <p className="fw-bolder">{t(`servDisp_${i}`).toUpperCase()}</p>
                                                 </div>
                                             </div>
                                         </SwiperSlide>
