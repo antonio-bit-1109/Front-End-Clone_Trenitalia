@@ -2,6 +2,7 @@
 export interface rootState {
     main: MainState_Interface;
     utente: UtenteState_Interface;
+    token: TokenState_Interface;
 }
 export interface MainState_Interface {
     widthWindow: number;
@@ -16,17 +17,32 @@ export interface MainState_Interface {
 }
 
 export interface UtenteState_Interface {
-    datiNewUtente: null | Utente;
+    newUtente: null | Utente;
+}
+
+export interface TokenState_Interface {
+    token: null | string;
 }
 
 export interface Utente {
-    nome: null | string;
-    cognome: null | string;
-    codiceFiscale: null | string;
-    email: null | string;
-    dataNascita: null | Date;
-    sesso: null | string;
-    cellulare: null | string;
+    nome: string;
+    cognome: string;
+    codiceFiscale: string;
+    email: string;
+    dataNascita: Date;
+    sesso: string;
+    cellulare: string;
+    nomeUtente: string;
+    password: string;
+}
+
+export interface tokenResponse {
+    token: string;
+}
+
+export interface DatiLogin {
+    nomeUtente: string | undefined;
+    password: string | undefined;
 }
 
 export interface Image {
@@ -50,6 +66,10 @@ export interface PostUtenteDTO {
     nome: string;
     sesso: string;
 }
+
+// export interface PostUtenteResponse {
+//     message: string;
+// }
 // export interface type_Microsoft_Translated_Type {
 //     translation: typeArray_translated[];
 // }
