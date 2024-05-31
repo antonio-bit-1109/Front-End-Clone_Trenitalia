@@ -1,3 +1,8 @@
+//ogni volta che richiamo useselector devo dirgli che deve far riferimento all interfaccia rootstate per accedere allo store redux
+export interface rootState {
+    main: MainState_Interface;
+    utente: UtenteState_Interface;
+}
 export interface MainState_Interface {
     widthWindow: number;
     imagesObjs: null | Image[];
@@ -10,9 +15,18 @@ export interface MainState_Interface {
     // dataTraducedInEn: null | type_Microsoft_Translated_Type;
 }
 
-//ogni volta che richiamo useselector devo dirgli che deve far riferimento all interfaccia rootstate per accedere allo store redux
-export interface rootState {
-    main: MainState_Interface;
+export interface UtenteState_Interface {
+    datiNewUtente: null | Utente;
+}
+
+export interface Utente {
+    nome: null | string;
+    cognome: null | string;
+    codiceFiscale: null | string;
+    email: null | string;
+    dataNascita: null | Date;
+    sesso: null | string;
+    cellulare: null | string;
 }
 
 export interface Image {
@@ -27,6 +41,15 @@ export interface DataCarosello {
     title: string;
 }
 
+export interface PostUtenteDTO {
+    cellulare: string;
+    codiceFiscale: string;
+    cognome: string;
+    dataNascita: string;
+    email: string;
+    nome: string;
+    sesso: string;
+}
 // export interface type_Microsoft_Translated_Type {
 //     translation: typeArray_translated[];
 // }

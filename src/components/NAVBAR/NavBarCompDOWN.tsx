@@ -7,8 +7,10 @@ import { List } from "react-bootstrap-icons";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import CambioLinguaComponent from "./CambioLinguaComponent";
+import { useNavigate } from "react-router-dom";
 
 const NavBarCompDOWN = () => {
+    const navigate = useNavigate();
     const { t } = useTranslation();
 
     const { widthWindow } = useSelector((store: rootState) => store.main);
@@ -46,7 +48,10 @@ const NavBarCompDOWN = () => {
                     {" "}
                     <div className=" d-flex align-items-end justify-content-between justify-content-xxl-center my-2">
                         <img
-                            className="px-3 p-xxl-0 mx-xxl-2"
+                            onClick={() => {
+                                navigate("/");
+                            }}
+                            className="px-3 p-xxl-0 mx-xxl-2 pointer"
                             style={{ width: `${handleImageReSize()}` }}
                             src={LogoTrenitalia}
                             alt="logo trenitalia"
@@ -86,7 +91,12 @@ const NavBarCompDOWN = () => {
                                 </Button>
                             </div>{" "}
                             <div>
-                                <Button variant="white ">
+                                <Button
+                                    onClick={() => {
+                                        navigate("/areaRiservata");
+                                    }}
+                                    variant="white "
+                                >
                                     {" "}
                                     <PersonFill />
                                 </Button>{" "}

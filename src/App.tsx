@@ -5,6 +5,7 @@ import "./index.scss";
 import "./App.scss";
 import MainPage from "./components/MainPage";
 import NavBarComp from "./components/NAVBAR/NavBarComp";
+import AreaRiservata from "./components/LOG-IN/AreaRiservata";
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
                 <NavBarComp />
                 <Routes>
                     <Route path="/" element={<MainPage />} />
+                    <Route path="/areaRiservata" element={<AreaRiservata />} />
                 </Routes>
             </BrowserRouter>
         </>
