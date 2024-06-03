@@ -5,23 +5,29 @@
 // import { useDispatch } from "react-redux";
 // import { AppDispatch } from "../../redux/store/store";
 // import { postUtenteRegistrazione } from "../../fetches/POST/PostUtente";
+import { Container, Row } from "react-bootstrap";
 import RegistrationFormComponent from "./RegistrationFormComponent";
 import LoginFormComponent from "./LoginFormComponent";
-import { Container, Row } from "react-bootstrap";
+// import { Button, Container, Form, Row } from "react-bootstrap";
+import LogOutComponent from "../LOG-OUT/LogOutComponent";
+// import CampiAggiuntiviRegistrazione from "./CampiAggiuntiviRegistrazione";
 
 const AreaRiservata = () => {
     // const dispatch: AppDispatch = useDispatch();
 
     return (
         <>
-            <Container>
-                <div className="my-5">
+            <div className=" bg-grey">
+                <Container fluid>
                     <Row>
+                        {/* <Form onSubmit={handleSubmit(submitHandler)}> */}
                         <RegistrationFormComponent />
+                        {/* <CampiAggiuntiviRegistrazione /> */}
                         <LoginFormComponent />
+                        <LogOutComponent />
                     </Row>
-                </div>
-            </Container>
+                </Container>
+            </div>
         </>
     );
 };

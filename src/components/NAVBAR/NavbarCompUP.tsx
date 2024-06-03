@@ -4,10 +4,26 @@ import { useTranslation } from "react-i18next";
 import CambioLinguaComponent from "./CambioLinguaComponent";
 import { FaUser } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { AppState } from "../../redux/store/store";
+import { jwtDecode } from "jwt-decode";
+import { decriptedTokenStructure } from "../../interfaces/Interfaces";
 const NavbarCompUP = () => {
     const navigate = useNavigate();
+    const { token } = useSelector((store: AppState) => store.token);
+    const [decriptedToken, setDecriptedToken] = useState<decriptedTokenStructure | null>(null);
     // hook importato da i18n per le traduzioni
     const { t } = useTranslation();
+
+    useEffect(() => {
+        if (token !== null) {
+            setDecriptedToken(jwtDecode(token));
+            console.log(decriptedToken);
+        } else {
+            return;
+        }
+    }, [token]);
 
     return (
         <div className="d-none d-xxl-block">
@@ -46,6 +62,7 @@ const NavbarCompUP = () => {
                             {/* //div cambio lingua */}
                             <CambioLinguaComponent />
                         </section>
+                        {/* <div>{decriptedToken ? <div> Benvenuto/a {decriptedToken.unique_name}</div> : null}</div> */}
                     </Col>
                 </div>
             </Row>

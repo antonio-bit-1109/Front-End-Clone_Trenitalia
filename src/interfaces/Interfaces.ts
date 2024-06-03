@@ -11,9 +11,6 @@ export interface MainState_Interface {
     currentFlag: undefined | string;
     currentLanguage: undefined | string;
     InitialFlagMatrix: undefined | string[][];
-    // dataToTraduce: null | string[];
-    // dataTraducedInEs: null | type_Microsoft_Translated_Type;
-    // dataTraducedInEn: null | type_Microsoft_Translated_Type;
 }
 
 export interface UtenteState_Interface {
@@ -34,6 +31,18 @@ export interface Utente {
     cellulare: string;
     nomeUtente: string;
     password: string;
+}
+
+export interface decriptedTokenStructure {
+    acr: string;
+    aud: string;
+    email: string;
+    exp: number;
+    iss: string;
+    jti: string;
+    name: string;
+    sub: string;
+    unique_name: string;
 }
 
 export interface tokenResponse {

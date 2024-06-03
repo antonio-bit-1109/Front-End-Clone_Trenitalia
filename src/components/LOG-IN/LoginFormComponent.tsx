@@ -15,7 +15,9 @@ const LoginFormComponent = () => {
 
     const handleSubmit = (e: React.FormEvent, data: DatiLogin) => {
         e.preventDefault();
+        console.log(data);
         dispatch(LoginUtente(data));
+        // setDatiLogin({ nomeUtente: "", password: "" });
     };
 
     return (

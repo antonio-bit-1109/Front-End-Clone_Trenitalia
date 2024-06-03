@@ -278,3 +278,22 @@ $border-sizes: (
 .pointer {
     cursor: pointer;
 }
+
+.background {
+    background-image: url(../public/imgs/trenoimg.jpeg);
+}
+.background1 {
+    background-image: url(../public/imgs/xgoitalia.png);
+    background-size: cover;
+    background-position: top;
+}
+
+.color {
+    color: grey;
+}
+
+.alignment {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

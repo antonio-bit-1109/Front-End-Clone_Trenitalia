@@ -4,12 +4,19 @@ import storage from "redux-persist/lib/storage";
 import FirstReducer from "../reducers/firstReducer";
 import utenteReducer from "../reducers/utenteReducer";
 import tokenReducer from "../reducers/tokenReducer";
+import expireReducer from "redux-persist-expire";
 
 const persistConfig = {
     key: "root",
     storage,
-    whitelist: [],
-    transforms: [],
+    whitelist: ["token"],
+    transforms: [
+        expireReducer("token", {
+            expireSeconds: 7 * 24 * 60 * 60, // 7 days
+            expiredState: { token: null },
+            autoExpire: true,
+        }),
+    ],
 };
 
 const rootReducer = combineReducers({
