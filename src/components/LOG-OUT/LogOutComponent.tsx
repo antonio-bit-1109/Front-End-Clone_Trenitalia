@@ -1,9 +1,9 @@
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Button } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, AppState } from "../../redux/store/store";
 import { setToken } from "../../redux/reducers/tokenReducer";
-import { toast } from "react-toastify";
-import { useEffect } from "react";
+// import { toast } from "react-toastify";
+// import { useEffect } from "react";
 
 const LogOutComponent = () => {
     const dispatch: AppDispatch = useDispatch();
@@ -13,26 +13,21 @@ const LogOutComponent = () => {
         dispatch(setToken(null));
     };
 
-    useEffect(() => {
-        if (!token) {
-            toast.info("logout effettuato.");
-        } else {
-            toast.info("sei loggato.");
-        }
-    }, [token]);
+    // useEffect(() => {
+    //     if (!token) {
+    //         toast.info("logout effettuato.");
+    //     } else {
+    //         toast.info("sei loggato.");
+    //     }
+    // }, [token]);
 
     return (
         <>
             {token && (
-                <Container>
-                    <Row>
-                        <Col>
-                            <div>
-                                <Button onClick={HandleLogOut}> Log Out </Button>
-                            </div>
-                        </Col>
-                    </Row>
-                </Container>
+                <Button className="border border-2 border-black py-0" variant="transparent" onClick={HandleLogOut}>
+                    {" "}
+                    Log Out{" "}
+                </Button>
             )}
         </>
     );

@@ -8,8 +8,9 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import CambioLinguaComponent from "./CambioLinguaComponent";
 import { useNavigate } from "react-router-dom";
-import { AppDispatch } from "../../redux/store/store";
+import { AppDispatch, AppState } from "../../redux/store/store";
 import { setShowModalAreaprivata } from "../../redux/reducers/utenteReducer";
+import LogOutComponent from "../LOG-OUT/LogOutComponent";
 
 const NavBarCompDOWN = () => {
     const dispatch: AppDispatch = useDispatch();
@@ -17,6 +18,7 @@ const NavBarCompDOWN = () => {
     const { t } = useTranslation();
 
     const { widthWindow } = useSelector((store: rootState) => store.main);
+    const { decriptedToken } = useSelector((store: AppState) => store.token);
 
     const [show, setShow] = useState(false);
 
@@ -103,6 +105,7 @@ const NavBarCompDOWN = () => {
                                 >
                                     {" "}
                                     <PersonFill />
+                                    <p className="m-0">{decriptedToken ? decriptedToken.unique_name : ""}</p>
                                 </Button>{" "}
                             </div>
                             <div>
@@ -120,6 +123,7 @@ const NavBarCompDOWN = () => {
                         </div>
                     </div>
                     {widthWindow < 1400 ? <CambioLinguaComponent /> : null}
+                    <div> {decriptedToken && widthWindow < 1400 ? <LogOutComponent /> : null}</div>
                 </Col>
             </Row>
         </>

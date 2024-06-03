@@ -20,6 +20,7 @@ export interface UtenteState_Interface {
 
 export interface TokenState_Interface {
     token: null | string;
+    decriptedToken: null | decriptedTokenStructure;
 }
 
 export interface Utente {
