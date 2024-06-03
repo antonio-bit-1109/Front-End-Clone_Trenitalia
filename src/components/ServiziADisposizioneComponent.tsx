@@ -47,7 +47,7 @@ const ServiziADisposizioneComponent = () => {
         <div className="mb-end-mdd-1 bg-grey">
             <Container className="p-0">
                 <Row>
-                    <Col className="offset-1">
+                    <Col className="offset-2">
                         <div className="my-4 fs-5 fw-bold  ">{t("serv_disp1")}</div>
                     </Col>
                 </Row>

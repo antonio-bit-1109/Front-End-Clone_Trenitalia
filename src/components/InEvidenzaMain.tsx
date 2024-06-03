@@ -22,11 +22,14 @@ const InEvidenzaMain = () => {
             setCardPerView(1);
             return;
         }
-        if (widthWindow < 1200) {
+        if (widthWindow >= 720 && widthWindow < 1400) {
             setCardPerView(2);
             return;
         }
-        setCardPerView(3);
+        if (widthWindow > 1400) {
+            setCardPerView(3);
+        }
+        // setCardPerView(3);
         return;
     };
 
@@ -34,7 +37,7 @@ const InEvidenzaMain = () => {
         <>
             <Container className="p-0">
                 <Row>
-                    <Col className="offset-1">
+                    <Col className="offset-2">
                         <div className="my-3 fs-5 fw-bold">
                             <p>{t("inEvid1")}</p>
                         </div>
@@ -43,8 +46,8 @@ const InEvidenzaMain = () => {
             </Container>
             <div className="mb-end-mdd-2">
                 <Container>
-                    <Row>
-                        <Col>
+                    <Row className="justify-content-center">
+                        <Col xs="10" md="10" lg="8">
                             <Swiper
                                 slidesPerView={cardPerWiew}
                                 navigation={true}

@@ -48,11 +48,14 @@ const OfferteEServiziComponent = () => {
             setCardPerView(1);
             return;
         }
-        if (widthWindow < 1200) {
+        if (widthWindow >= 720 && widthWindow < 1400) {
             setCardPerView(2);
             return;
         }
-        setCardPerView(3);
+        if (widthWindow > 1400) {
+            setCardPerView(3);
+        }
+        // setCardPerView(3);
         return;
     };
 
@@ -60,15 +63,15 @@ const OfferteEServiziComponent = () => {
         <>
             <Container className="p-0">
                 <Row>
-                    <Col className="offset-1">
+                    <Col className="offset-2">
                         <div className="my-3 fs-5 fw-bold">{t("off_e_serv1")}</div>
                     </Col>
                 </Row>
             </Container>
             <div className="mb-end-xll-2">
                 <Container>
-                    <Row>
-                        <Col>
+                    <Row className="justify-content-center">
+                        <Col xs="10" md="10" lg="8">
                             <Swiper
                                 slidesPerView={cardPerWiew}
                                 navigation={true}
@@ -99,8 +102,8 @@ const OfferteEServiziComponent = () => {
                     </Row>
 
                     <div className="mt-2">
-                        <Row>
-                            <Col>
+                        <Row className="justify-content-center">
+                            <Col xs="10" md="10" lg="8">
                                 <Swiper
                                     slidesPerView={cardPerWiew}
                                     navigation={true}
@@ -134,8 +137,8 @@ const OfferteEServiziComponent = () => {
                         </Row>
                     </div>
                     <div className="mt-2">
-                        <Row>
-                            <Col>
+                        <Row className="justify-content-center">
+                            <Col xs="10" md="10" lg="8">
                                 <Swiper
                                     slidesPerView={cardPerWiew}
                                     slidesPerGroup={1}
@@ -149,7 +152,7 @@ const OfferteEServiziComponent = () => {
                                     {imagesObjs &&
                                         imagesObjs.slice(6, 9).map((obj, i) => (
                                             <SwiperSlide key={`my-image-key-${i}`}>
-                                                <div className="d-flex justify-content-center mt-2 ">
+                                                <div className="d-flex justify-content-center mt-2">
                                                     {" "}
                                                     <img
                                                         className="rounded-4 mx-2 position-relative img-size"
