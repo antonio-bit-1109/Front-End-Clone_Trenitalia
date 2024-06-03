@@ -23,7 +23,7 @@ const NavBarComp = () => {
     }, [dispatch]);
 
     return (
-        <div className="sticky-top">
+        <div className="sticky-top position-relative">
             <Container fluid className="p-0">
                 <NavbarCompUP />
                 <div className="bg-white d-flex flex-column align-items-center">

@@ -10,6 +10,7 @@ import { AppDispatch, AppState } from "../../redux/store/store";
 import { jwtDecode } from "jwt-decode";
 import { decriptedTokenStructure } from "../../interfaces/Interfaces";
 import { setShowModalAreaprivata } from "../../redux/reducers/utenteReducer";
+import LogOutComponent from "../LOG-OUT/LogOutComponent";
 const NavbarCompUP = () => {
     const dispatch: AppDispatch = useDispatch();
     // const navigate = useNavigate();
@@ -22,7 +23,11 @@ const NavbarCompUP = () => {
         if (token !== null) {
             setDecriptedToken(jwtDecode(token));
             console.log(decriptedToken);
-        } else {
+            return;
+        }
+
+        if (!token) {
+            setDecriptedToken(null);
             return;
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -65,8 +70,19 @@ const NavbarCompUP = () => {
                             </Button>{" "}
                             {/* //div cambio lingua */}
                             <CambioLinguaComponent />
+                            <div className="absolutePosition">
+                                {decriptedToken && (
+                                    <>
+                                        <div className=" bg-warning p-3 rounded-3">
+                                            <span className="fw-bold">
+                                                Sei loggato come, <div>{decriptedToken.unique_name}</div>
+                                            </span>
+                                        </div>
+                                        <LogOutComponent />
+                                    </>
+                                )}
+                            </div>
                         </section>
-                        {/* <div>{decriptedToken ? <div> Benvenuto/a {decriptedToken.unique_name}</div> : null}</div> */}
                     </Col>
                 </div>
             </Row>
