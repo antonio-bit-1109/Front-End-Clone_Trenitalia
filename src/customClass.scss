@@ -308,3 +308,24 @@ $border-sizes: (
     top: 20px;
     right: 50px;
 }
+
+.altezza {
+    height: 81.8vh;
+}
+
+.transition {
+    animation: puff-in-center 0.3s cubic-bezier(0.47, 0, 0.745, 0.715) both;
+}
+
+@keyframes puff-in-center {
+    0% {
+        transform: scale(2);
+        filter: blur(4px);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        filter: blur(0px);
+        opacity: 1;
+    }
+}

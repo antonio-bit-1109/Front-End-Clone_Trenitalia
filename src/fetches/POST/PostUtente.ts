@@ -126,20 +126,7 @@ export const RecuperaPasswordUtente = (emailText: string) => async () => {
         });
 
         if (!request.ok) {
-            switch (request.status) {
-                case 400:
-                    throw new Error("Bad request");
-                case 401:
-                    throw new Error("Unauthorized");
-                case 403:
-                    throw new Error("Forbidden");
-                case 404:
-                    throw new Error("Not found");
-                case 500:
-                    throw new Error("Internal server error");
-                default:
-                    throw new Error("An error occurred");
-            }
+            handleErrorResponse(request);
         }
 
         if (request.ok) {

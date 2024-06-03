@@ -14,7 +14,7 @@ import ModalRegistration_Login from "./components/ModalRegistration_Login";
 
 function App() {
     return (
-        <>
+        <div className="position-relative">
             <BrowserRouter>
                 <ToasterComponent />
                 <NavBarComp />
@@ -27,7 +27,7 @@ function App() {
                     <Route path="/recuperaPassword" element={<RecuperaPassword />} />
                 </Routes>
             </BrowserRouter>
-        </>
+        </div>
     );
 }
 
