@@ -12,7 +12,6 @@ import ServiziADisposizioneComponent from "./ServiziADisposizioneComponent";
 // import { AppDispatch, AppState } from "../redux/store/store";
 // import { useDispatch, useSelector } from "react-redux";
 // import { setShowModalAreaprivata } from "../redux/reducers/utenteReducer";
-import ModalRegistration_Login from "./ModalRegistration_Login";
 // import { rootState } from "../interfaces/Interfaces";
 
 const MainPage = () => {
@@ -27,7 +26,6 @@ const MainPage = () => {
             <LavoriProgrammatiComponent />
             <FooterComponent />
             <FooterEnd />
-            <ModalRegistration_Login />
         </>
     );
 };

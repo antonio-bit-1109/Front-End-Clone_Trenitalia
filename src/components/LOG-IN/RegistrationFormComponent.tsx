@@ -39,7 +39,7 @@ const RegistrationFormComponent = () => {
     };
 
     return (
-        <>
+        <div className="bg-grey">
             <Form className="alignment" onSubmit={handleSubmit(submitHandlerRegistration)}>
                 {" "}
                 <Col xs="7">
@@ -371,7 +371,7 @@ const RegistrationFormComponent = () => {
                     </div>
                 </Col>
             </Form>{" "}
-        </>
+        </div>
     );
 };
 

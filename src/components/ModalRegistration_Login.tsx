@@ -33,12 +33,21 @@ const ModalRegistration_Login = () => {
                         <p
                             onClick={() => {
                                 navigate("registrazione");
+                                dispatch(setShowModalAreaprivata(false));
                             }}
                             className=" text-decoration-underline pointer"
                         >
                             registrati
                         </p>
-                        <p className=" text-decoration-underline pointer">recupera password</p>
+                        <p
+                            onClick={() => {
+                                navigate("/recuperaPassword");
+                                dispatch(setShowModalAreaprivata(false));
+                            }}
+                            className=" text-decoration-underline pointer"
+                        >
+                            recupera password
+                        </p>
                     </div>
                 </Modal.Body>
             </Modal>

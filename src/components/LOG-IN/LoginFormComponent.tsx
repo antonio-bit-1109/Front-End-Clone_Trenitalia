@@ -50,9 +50,9 @@ const LoginFormComponent = () => {
                         />
                     </Form.Group>
                     <div className="d-flex">
-                        <Button className="w-100" type="submit">
+                        <Button className="w-100" type="submit" variant="danger">
                             {" "}
-                            Login{" "}
+                            ACCEDI{" "}
                         </Button>
                     </div>
                 </Form>

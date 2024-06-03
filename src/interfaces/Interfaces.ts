@@ -88,3 +88,22 @@ export interface PostUtenteDTO {
 //     text: string;
 //     to: string;
 // }
+
+export interface Irequest {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    body: any;
+    bodyUsed: boolean;
+    headers: object;
+    ok: boolean;
+    redirected: boolean;
+    status: number;
+    statusText: string;
+    type: string;
+    url: string;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    json: any;
+}
+
+export interface PromiseObject {
+    message: string;
+}
