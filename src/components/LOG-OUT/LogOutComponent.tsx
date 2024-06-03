@@ -13,14 +13,6 @@ const LogOutComponent = () => {
         dispatch(setToken(null));
     };
 
-    // useEffect(() => {
-    //     if (!token) {
-    //         toast.info("logout effettuato.");
-    //     } else {
-    //         toast.info("sei loggato.");
-    //     }
-    // }, [token]);
-
     return (
         <>
             {token && (
