@@ -19,7 +19,7 @@ const JumbotronMainCompo = () => {
                 <Row>
                     <Col>
                         <div>
-                            <img className="w-100" src={img} alt="" />
+                            <img loading="lazy" className="w-100" src={img} alt="" />
                         </div>
                     </Col>
                 </Row>
