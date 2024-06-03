@@ -15,6 +15,7 @@ export interface MainState_Interface {
 
 export interface UtenteState_Interface {
     newUtente: null | Utente;
+    showModalAreaPrivata: undefined | boolean;
 }
 
 export interface TokenState_Interface {

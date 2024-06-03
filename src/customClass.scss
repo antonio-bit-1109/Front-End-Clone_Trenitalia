@@ -297,3 +297,8 @@ $border-sizes: (
     flex-direction: column;
     align-items: center;
 }
+
+.modal-header .btn-close {
+    padding: calc(var(--bs-modal-header-padding-y) * 0.5) calc(var(--bs-modal-header-padding-x) * 0.5);
+    margin: 2px 2px;
+}

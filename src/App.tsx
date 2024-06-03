@@ -8,6 +8,7 @@ import MainPage from "./components/MainPage";
 import NavBarComp from "./components/NAVBAR/NavBarComp";
 import AreaRiservata from "./components/LOG-IN/AreaRiservata";
 import ToasterComponent from "./components/ToasterComponent";
+import RegistrationFormComponent from "./components/LOG-IN/RegistrationFormComponent";
 
 function App() {
     return (
@@ -18,6 +19,7 @@ function App() {
                 <Routes>
                     <Route path="/" element={<MainPage />} />
                     <Route path="/areaRiservata" element={<AreaRiservata />} />
+                    <Route path="/registrazione" element={<RegistrationFormComponent />} />
                 </Routes>
             </BrowserRouter>
         </>

@@ -17,13 +17,11 @@ const LoginFormComponent = () => {
         e.preventDefault();
         console.log(data);
         dispatch(LoginUtente(data));
-        // setDatiLogin({ nomeUtente: "", password: "" });
     };
 
     return (
         <Col>
-            <div className="border border-2">
-                <p className="text-center">Login</p>
+            <div>
                 <Form
                     onSubmit={(e) => {
                         handleSubmit(e, datiLogin);
@@ -37,7 +35,7 @@ const LoginFormComponent = () => {
                             }}
                             value={datiLogin.nomeUtente}
                             type="text"
-                            placeholder="Inserisci il nome utente"
+                            placeholder="Nome Utente*"
                         />
                     </Form.Group>
                     <Form.Group className="mb-3" controlId="PasswordId">
@@ -48,9 +46,15 @@ const LoginFormComponent = () => {
                                 setDatiLogin({ ...datiLogin, password: e.target.value });
                             }}
                             value={datiLogin.password}
+                            placeholder="Password*"
                         />
                     </Form.Group>
-                    <Button type="submit"> Login </Button>
+                    <div className="d-flex">
+                        <Button className="w-100" type="submit">
+                            {" "}
+                            Login{" "}
+                        </Button>
+                    </div>
                 </Form>
             </div>
         </Col>

@@ -3,14 +3,16 @@ import { Search } from "react-bootstrap-icons";
 import { useTranslation } from "react-i18next";
 import CambioLinguaComponent from "./CambioLinguaComponent";
 import { FaUser } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { AppState } from "../../redux/store/store";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, AppState } from "../../redux/store/store";
 import { jwtDecode } from "jwt-decode";
 import { decriptedTokenStructure } from "../../interfaces/Interfaces";
+import { setShowModalAreaprivata } from "../../redux/reducers/utenteReducer";
 const NavbarCompUP = () => {
-    const navigate = useNavigate();
+    const dispatch: AppDispatch = useDispatch();
+    // const navigate = useNavigate();
     const { token } = useSelector((store: AppState) => store.token);
     const [decriptedToken, setDecriptedToken] = useState<decriptedTokenStructure | null>(null);
     // hook importato da i18n per le traduzioni
@@ -23,6 +25,7 @@ const NavbarCompUP = () => {
         } else {
             return;
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [token]);
 
     return (
@@ -48,7 +51,8 @@ const NavbarCompUP = () => {
                             </Button>
                             <Button
                                 onClick={() => {
-                                    navigate("/areaRiservata");
+                                    // navigate("/areaRiservata");
+                                    dispatch(setShowModalAreaprivata(true));
                                 }}
                                 variant="transparent"
                                 className="size-tiny fw-bold d-flex align-items-center"

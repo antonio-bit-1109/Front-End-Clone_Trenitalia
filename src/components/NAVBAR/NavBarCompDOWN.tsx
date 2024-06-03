@@ -1,15 +1,18 @@
 import { Button, Col, Offcanvas, Row } from "react-bootstrap";
 import LogoTrenitalia from "/svgs/logo-trenitalia.svg";
 import { PersonFill } from "react-bootstrap-icons";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { rootState } from "../../interfaces/Interfaces";
 import { List } from "react-bootstrap-icons";
 import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import CambioLinguaComponent from "./CambioLinguaComponent";
 import { useNavigate } from "react-router-dom";
+import { AppDispatch } from "../../redux/store/store";
+import { setShowModalAreaprivata } from "../../redux/reducers/utenteReducer";
 
 const NavBarCompDOWN = () => {
+    const dispatch: AppDispatch = useDispatch();
     const navigate = useNavigate();
     const { t } = useTranslation();
 
@@ -93,7 +96,8 @@ const NavBarCompDOWN = () => {
                             <div>
                                 <Button
                                     onClick={() => {
-                                        navigate("/areaRiservata");
+                                        // navigate("/areaRiservata");
+                                        dispatch(setShowModalAreaprivata(true));
                                     }}
                                     variant="white "
                                 >

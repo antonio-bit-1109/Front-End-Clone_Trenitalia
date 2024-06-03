@@ -1,7 +1,7 @@
 import { toast } from "react-toastify";
 import { LocalHostPath } from "../../functions/localHostPath";
 import { DatiLogin, PostUtenteDTO, Utente, tokenResponse } from "../../interfaces/Interfaces";
-import { setNewUtente } from "../../redux/reducers/utenteReducer";
+import { setNewUtente, setShowModalAreaprivata } from "../../redux/reducers/utenteReducer";
 import { AppDispatch } from "../../redux/store/store";
 import { setToken } from "../../redux/reducers/tokenReducer";
 
@@ -87,6 +87,7 @@ export const LoginUtente = (dataLogin: DatiLogin) => async (dispatch: AppDispatc
                 autoClose: 4000,
             });
             dispatch(setToken(response.token));
+            dispatch(setShowModalAreaprivata(false));
         }
     } catch (err: unknown) {
         if (err instanceof Error) {
